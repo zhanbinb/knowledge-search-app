@@ -1,0 +1,6 @@
+{"id":"travel-limit","question":"深圳出差住宿每晚最多报销多少？","route":"knowledge","expected_source":"员工差旅费用管理办法.md"}
+{"id":"travel-three-nights","question":"深圳出差3晚住宿最多报销多少？","route":"knowledge","expected_source":"员工差旅费用管理办法.md"}
+{"id":"business-days","question":"计算2026-10-26到2026-10-30有多少个工作日","route":"tool","expected_source":"calculate_business_days"}
+{"id":"calculator","question":"计算 (12 + 8) * 3","route":"tool","expected_source":"calculator"}
+{"id":"no-answer","question":"公司南极办公室的门禁时间是什么？","route":"knowledge","expected_behavior":"reject"}
+{"id":"policy-mcp","question":"通过MCP查询信息安全制度","route":"tool","expected_source":"lookup_policy"}

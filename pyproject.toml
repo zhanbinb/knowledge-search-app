@@ -1,0 +1,49 @@
+[project]
+name = "knowledge-search-app"
+version = "0.1.0"
+description = "Enterprise knowledge-base Agent demo with LangChain, LangGraph, RAG, MCP and FastAPI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "chromadb>=0.6.0,<2.0.0",
+  "fastapi>=0.115.0,<1.0.0",
+  "httpx>=0.28.0,<1.0.0",
+  "jieba>=0.42.1,<1.0.0",
+  "langchain>=0.3.27,<1.0.0",
+  "langchain-core>=0.3.75,<1.0.0",
+  "langchain-openai>=0.3.30,<1.0.0",
+  "langgraph>=0.6.0,<1.0.0",
+  "mcp>=1.14.0,<2.0.0",
+  "opentelemetry-api>=1.34.0,<2.0.0",
+  "opentelemetry-exporter-otlp-proto-http>=1.34.0,<2.0.0",
+  "opentelemetry-instrumentation-fastapi>=0.55b0,<1.0.0",
+  "opentelemetry-sdk>=1.34.0,<2.0.0",
+  "pypdf>=5.9.0,<7.0.0",
+  "python-multipart>=0.0.20,<1.0.0",
+  "pydantic-settings>=2.10.0,<3.0.0",
+  "rank-bm25>=0.2.2,<1.0.0",
+  "uvicorn[standard]>=0.35.0,<1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4.0,<10.0.0",
+  "pytest-asyncio>=1.0.0,<2.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app", "mcp_server"]
